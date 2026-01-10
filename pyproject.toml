@@ -1,0 +1,23 @@
+[project]
+name = "boardgame-state-detection"
+version = "0.1.0"
+description = "Detecting the state of a Man, Don't Get Angry board game from video"
+requires-python = ">=3.9"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP", "SIM", "RUF"]
+
+# most of the code is in the notebook, so a few rules don't really fit here
+ignore = [
+    "E501",   # the HSV ranges and board layout tables are easier to read on one line
+    "E701",   # short `if cond: ...` guards
+    "E702",
+    "SIM102",
+    "SIM103",
+    "RUF059", # unused names in tuple unpacking still document what is returned
+    "B007",
+]
